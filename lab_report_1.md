@@ -15,7 +15,7 @@ Now you are ready to connect your own device to the remote server!
 
 Look up and set new password for your student account for the course CSE 15L with Username and Student ID through [UCSD Educational Technology Services](https://sdacs.ucsd.edu/~icc/index.php). Follow this [tutorial](https://docs.google.com/document/d/1hs7CyQeh-MdUfM9uv99i8tqfneos6Y8bDU0uhn1wqho/edit) if you get stucked.
 
-Open a terminal by clicking *Terminal* -> *New Terminal* in the VS Code menu bar to utilize `ssh`. Type in a command in this format(replace `<account>` with your specific course account):
+Open a terminal by clicking *Terminal* -> *New Terminal* in the VS Code menu bar to utilize `ssh`. Type in a command in this format (replace `<account>` with your specific course account):
 ```
 $ ssh <account>@ieng6.ucsd.edu
 ```
