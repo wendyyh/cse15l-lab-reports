@@ -21,7 +21,8 @@ $ ssh cs15lsp23xx@ieng6.ucsd.edu
 ```
 If it is your first time connecting to this remote server, you will get a message asking for your intent to continue connecting. Type in `yes`, press enter, and type in your account password to continue. Otherwise, you only need to type in your password. (The password stays invisible when you type.) Once you log in the remote server successfully, which means the connection from your own device to the remote server completes, you will see something like this in your VS Code Terminal:
 
-[Terminal Screenshoot 1]()
+![Terminal Screenshoot 1](lab1_terminal_sc1.png)
 
 Now you are ready to try out some commands!
 ## Trying Commands 
+
