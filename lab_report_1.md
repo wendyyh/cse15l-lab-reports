@@ -21,7 +21,7 @@ $ ssh <account>@ieng6.ucsd.edu
 ```
 If it is your first time connecting to this remote server, you will get a message asking for your intent to continue connecting. Type in `yes`, press enter, and type in your account password to continue. Otherwise, you only need to type in your password. (The password stays invisible when you type.) Once you log into the remote server successfully, which means the connection from your own device to the remote server completes, you will see something like this in your VS Code terminal:
 
-![Remote Connect TOCHANGE](https://i.imgur.com/SzSMIwS.png)
+![Remote Connect TOCHANGE](lab1_remote_connect_sc.png)
 
 Now you are ready to try out some commands!
 
@@ -38,7 +38,7 @@ Command list to try:
 
 The screenshot below shows expected outputs from these useful commands. Try it on your VS Code terminal to see if you get similar ones: 
 
-![Commands Trying TOCHANGE](https://i.imgur.com/HCUs5ET.png)
+![Commands Trying TOCHANGE](lab1_commands_sc.png)
 
 Try your best to explain how these commands work to produce a certain output (or produce errors). \
 Hint: Some commands will not work properly if you are on a wrong account, such as your UCSD official account.
