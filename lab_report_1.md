@@ -21,7 +21,7 @@ $ ssh <account>@ieng6.ucsd.edu
 ```
 If it is your first time connecting to this remote server, you will get a message asking for your intent to continue connecting. Type in `yes`, press enter, and type in your account password to continue. Otherwise, you only need to type in your password. (The password stays invisible when you type.) Once you log into the remote server successfully, which means the connection from your own device to the remote server completes, you will see something like this in your VS Code terminal:
 
-![Terminal Screenshoot 1](lab1_terminal_sc1.png)
+![Remote Connect Screenshot](lab1_remote_connect_sc.png)
 
 Now you are ready to try out some commands!
 
@@ -33,8 +33,15 @@ Command list to try:
 - `cd`
 - `ls -lat`
 - `ls -a`
-- `ls <directory>` (replace `<directory>` with `/home/linux/ieng6/cs15lsp23/<account>`, where `<account>` is your course specific account)
 -  `cp /home/linux/ieng6/cs15lsp23/public/hello.txt ~/`
 -  `cat /home/linux/ieng6/cs15lsp23/public/hello.txt`
 
 The screenshot below shows outputs regarding these useful commands. Try it on your VS Code terminal to see if you get similar ones: 
+
+![Commands Trying Screenshot](lab1_commands_sc.png)
+
+Try your best to explain how these commands work to produce certain output (or produce errors).
+
+When you finish all above steps, you should log out the remote server by running `exit` command in your terminal.
+
+**Congratulation on finishing CSE 15L Lab 1!**
