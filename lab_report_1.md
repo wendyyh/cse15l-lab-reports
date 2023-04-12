@@ -1,4 +1,4 @@
-# CSE 15L Lab Report 1: Remote Access and File System
+# CSE 15L Lab Report 1: Remote Access and FileSystem
 ## Installing VScode
 (If you choose to use a computer in the lab, you may skip the installation and simply open Visual Studio Code on a lab computer.) 
 
