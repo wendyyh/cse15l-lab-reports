@@ -28,7 +28,7 @@ Now you are ready to try out some commands!
 ## Trying Commands 
 It is time to try different commands you have learned from Week 1 lectures. Either type in commands directly to run code on your computer or type commands after ssh-ing to run code on the remote server. 
 
-Command list to try:
+A command list to try:
 - `cd ~`: this command changes the current/working directory to your account's home directory.
 - `cd`: this command has the same function as `cd ~`(if you would like to changes the current working directory to a specified directory path/folder, use `cd <directory name>` instead).
 - `ls -lat`: this command lists all directories/folders and files in a directory and provides detailed information for each in an order by modification time (from latest to oldest).
