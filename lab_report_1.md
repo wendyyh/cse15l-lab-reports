@@ -21,7 +21,7 @@ $ ssh <account>@ieng6.ucsd.edu
 ```
 If it is your first time connecting to this remote server, you will get a message asking for your intent to continue connecting. Type in `yes`, press enter, and type in your account password to continue. Otherwise, you only need to type in your password. (The password stays invisible when you type.) Once you log into the remote server successfully, which means the connection from your own device to the remote server completes, you will see something like this in your VS Code terminal:
 
-![Remote Connect TOCHANGE](lab1_remote_connect_sc.png)
+![Remote Connect](lab1_remote_connect_sc.png)
 
 Now you are ready to try out some commands!
 
@@ -29,16 +29,16 @@ Now you are ready to try out some commands!
 It is time to try different commands you have learned from Week 1 lectures. Either type in commands directly to run code on your computer or type commands after ssh-ing to run code on the remote server. 
 
 Command list to try:
-- `cd ~`
-- `cd`
-- `ls -lat`
-- `ls -a`
--  `cp /home/linux/ieng6/cs15lsp23/public/hello.txt ~/`
--  `cat /home/linux/ieng6/cs15lsp23/public/hello.txt`
+- `cd ~`: this command changes the current/working directory to your account's home directory.
+- `cd`: this command has the same function as `cd ~`(if you would like to changes the current working directory to a specified directory path/folder, use `cd <directory name>` instead).
+- `ls -lat`: this command lists all directories/folders and files in a directory and provides detailed information for each in an order by modification time (from latest to oldest).
+- `ls -a`: this command lists all directories/folders and files, including all hidden files, in a directory
+- `cp /home/linux/ieng6/cs15lsp23/public/hello.txt ~/`: this command makes a copy of the file "hello.txt" from the directory "/home/linux/ieng6/cs15lsp23/public/" to your account's home directory.
+- `cat /home/linux/ieng6/cs15lsp23/public/hello.txt`: this command displays all contents of the file "hello.txt" located in the directory "/home/linux/ieng6/cs15lsp23/public/".
 
 The screenshot below shows expected outputs from these useful commands. Try it on your VS Code terminal to see if you get similar ones: 
 
-![Commands Trying TOCHANGE](lab1_commands_sc.png)
+![Commands Trying](lab1_commands_sc.png)
 
 Try your best to explain how these commands work to produce a certain output (or produce errors). \
 Hint: Some commands will not work properly if you are on a wrong account, such as your UCSD official account.
