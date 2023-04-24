@@ -10,6 +10,9 @@ To run the server on a local computer, we may use the following commands from th
 javac Server.java StringServer.java 
 java StringServer 4000
 ```
-Note that 4000 is a random port number that you may replace. A port number is any number between 1024 to 49151.
+(Note that 4000 is a random port number that you may replace. A port number is any number between 1024 to 49151.)
 
 If both commands run successfully, it would provide a link of the server for you to visit and put in requests.
+![run commands](lab2_run_server_commands.png)
+
+To access the server, open the link it provides in a browser and add the add-message requests to the end.
