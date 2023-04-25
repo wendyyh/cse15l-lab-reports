@@ -33,6 +33,7 @@ static void reverseInPlace(int[] arr) {
     }
   }
 ```
+
 One of the failure-inducing inputs for the buggy program is:
 ```
 @Test
@@ -42,6 +43,7 @@ One of the failure-inducing inputs for the buggy program is:
    assertArrayEquals(new int[]{4, 3, 2}, input1);
  }
 ```
+
 An input that doesn't induce a failure is:
 ```
 @Test 
@@ -51,7 +53,9 @@ An input that doesn't induce a failure is:
     assertArrayEquals(new int[]{ 1 }, input1);
 	}
 ```
+
 The symptom is that arr after reverseInPlace() would equals {4, 3, 4} instead of {4, 3, 2} as expected (see screenshots below).
+![symptoms](lab2_symptoms.png)
 
 The bugs here are:
 - should set up temporary variable to store the value
