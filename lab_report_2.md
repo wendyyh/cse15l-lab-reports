@@ -71,5 +71,5 @@ static void reverseInPlace(int[] arr) {
     }
  }
  ```
- ## Part 3: What I have learned from week 2-3 labs?
- 
+## Part 3: What I have learned from week 2-3 labs?
+Through labs from week 2 and 3, I have learned about how to build and run a basic web server as well as the process of debuging. I get to know not only components in an URL but also the concepts in bugs, such as failure-induced input, symptoms, etc. I think these skills would help me a lot in the future program development in that I am able to build and debug a program in a more logical way.
