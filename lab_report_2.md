@@ -15,4 +15,57 @@ java StringServer 4000
 If both commands run successfully, it would provide a link of the server for you to visit and put in requests.
 ![run commands](lab2_run_server_commands.png)
 
-To access the server, open the link it provides in a browser and add the add-message requests to the end.
+To access the server, open the link it provides with the add-message requests in a browser. For example, try to load the following link in a browser:
+-  `http://localhost:4000/add-message?s=Hello`
+![webpage1](lab2_webpage_1.png)
+The methods in my code get called is the main method from the `StringServer` class since I am accessing the server for the first time. The relative argument here is the port number 4000, and the integer `port` has been initiated. As the main method get called, it initiates a `Handler` object and calls the `handleRequest` method under the `Handler` class. The string message, which is empty now, is concatenated with the input request string `"Hello"` and a new line (`"\n"` in code).
+-  `http://localhost:4000/add-message?s=How are you`
+![webpage2](lab2_webpage_2.png)
+The methods in my code get called this time is the `handleRequest` method under the `Handler` class. The string message, which contains `"Hello" + "\n"` at this point, is concatenated with the input request string `"How are you"` and a new line (`"\n"` in code).
+
+At the end, type `ctrl + c` in the terminal to exit the server.
+## Part 2: Bugs
+The provided buggy method is:
+```
+static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = arr[arr.length - i - 1];
+    }
+  }
+```
+One of the failure-inducing inputs for the buggy program is:
+```
+@Test
+ public void testReverseInPlace_new() {
+   int[] input1 = {2, 3, 4};
+   ArrayExamples.reverseInPlace(input1);
+   assertArrayEquals(new int[]{4, 3, 2}, input1);
+ }
+```
+An input that doesn't induce a failure is:
+```
+@Test 
+	public void testReverseInPlace() {
+    int[] input1 = { 1 };
+    ArrayExamples.reverseInPlace(input1);
+    assertArrayEquals(new int[]{ 1 }, input1);
+	}
+```
+The symptom is that arr after reverseInPlace() would equals {4, 3, 4} instead of {4, 3, 2} as expected (see screenshots below).
+
+The bugs here are:
+- should set up temporary variable to store the value
+- should be i < arr.length/2 in the condition for the for loop
+
+The revised version of the method should be:
+```
+static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length/2; i += 1) {
+      int temp = arr[i];
+      arr[i] = arr[arr.length - i - 1];
+      arr[arr.length - i - 1] = temp;
+    }
+ }
+ ```
+ ## Part 3: What I have learned from week 2-3 labs?
+ 
