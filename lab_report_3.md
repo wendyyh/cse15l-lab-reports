@@ -24,6 +24,6 @@ The command-line option `-w` matches only whole words, which means it treats the
 ... to complete: 2 examples
 
 ## Sources
-To complete this lab report, I consulted the following websites:
+To complete this lab report, I consulted the following websites for `grep` command-line options:
 - [Wikibooks: Grep](https://en.wikibooks.org/wiki/Grep)
 - [GeeksforGeeks: grep command in Unix/Linux](https://www.geeksforgeeks.org/grep-command-in-unixlinux/)
