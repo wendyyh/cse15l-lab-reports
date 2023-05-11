@@ -5,7 +5,6 @@ In this lab report, we will focus on the functionality and various command-line 
 
 ## Functionality of the `grep` command
 The `grep` command is a powerful tool for searching for patterns in text files. It search a file or files for the given string and print matching lines. Its format is `grep <string> <file name>`.
-- to complete: 2 examples
 
 ## Command-line option: `-i`
 The command-line option `-i` ignores case distinctions between upper and lower cases in both the pattern and the input files.
@@ -21,7 +20,7 @@ The command-line option `-c` counts the number of matching lines.
 
 ## Command-line option: `-w`
 The command-line option `-w` matches only whole words, which means it treats the given pattern as a whole word and searches for lines that contain the exact given word.
-... to complete: 2 examples
+- to complete: 2 examples
 
 ## Sources
 To complete this lab report, I consulted the following websites for `grep` command-line options:
