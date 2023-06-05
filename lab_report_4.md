@@ -9,7 +9,7 @@ After successful log-in, the output would be like this:
 ![ieng6loginpage](lab4_ieng6loginpage.png)
 
 ## Step 2: Clone your fork of the repository from your Github account
-In this step, we are going to clone the fork of the repository [lab7](https://github.com/ucsd-cse15l-s23/lab7) from our own Github account. Use the **SSH url** from our own fork of the repository for `git clone`. The keys pressed are: `git<space>clone<space><the forked repo's ssh url><enter>`. 
+In this step, we are going to clone the fork of the repository [lab7](https://github.com/ucsd-cse15l-s23/lab7) from our own Github account. Use the **SSH url** from our own fork of the repository for `git clone` so that pushing to Github without requiring authentication would be allowed (yet we need to set up SSH authentication key for Github beforehand). The keys pressed are: `git<space>clone<space><the forked repo's ssh url><enter>`. 
 
 After a successful cloning of fork, the output would be like this:
 ![gitclonepage](lab4_redo_step2.png)
@@ -27,10 +27,12 @@ In this step, we need to edit `ListExamples.java` to fix the failing test. We ha
 To edit the code file directly through commands, we utilize Vim Editor. We press on keys `vim<space>ListExamples.java<enter>` to open `ListExamples.java` in the terminal. We see that the error part, character '1' in the variable `index1` in the final loop in the method merge, is located near the bottom of the file. Therefore, we can use the capital `<G>` as a key to navigate to the bottom line of the java file (by pressing `<shift>` with character `<g>` together. Below is a screenshot of where we are at after navigating to the bottom line:
 ![vimjavafile](lab4_redo_step4.png)
 
-Since Vim Editor has a series of key assignment to various functions, we may use the direction keys (`<h>` for left, `<j>` for down, `<k>` for up, and `<l>` for right) to naviagte to the place we want to make changes in the code file. To access the error part, the keys pressed are `<kkkkkklllllllllll>`, through which we move upward 6 lines and rightward 11 spaces. To edit the code, we need to replace '1' with `2` in the variable `index1`. In Vim Editor, the key `x` can be used to delete a character at the cursor type, and the key `i` can be used to insert characters before the cursor. Using key `i` will trigger the INSERT MODE in the editor, and we need to use the escape key `<esc>` to go back to the NORMAL MODE. Therefore, the keys pressed should be `xi2<esc>`. The correct version of code file should be:
+Since Vim Editor has a series of key assignment to various functions, we may use the direction keys (`<h>` for left, `<j>` for down, `<k>` for up, and `<l>` for right) to naviagte to the place we want to make changes in the code file. To access the error part, the keys pressed are `<k><k><k><k><k><k><l><l><l><l><l><l><l><l><l><l><l>`, through which we move upward 6 lines and rightward 11 spaces. 
+
+To edit the code, we need to replace '1' with `2` in the variable `index1`. In Vim Editor, the key `<x>` can be used to delete a character at the cursor type, and the key `<i>` can be used to insert characters before the cursor. Using key `<i>` will trigger the INSERT MODE in the editor, and we need to use the escape key `<esc>` to go back to the NORMAL MODE. Therefore, the keys pressed should be `<x><i>2<esc>`. The correct version of code file should be:
 ![vimjavafilecorrected](lab4_vimjavafilecorrected.png)
 
-Now, we can save the code file and exit the editor through command `:wq`. The keys pressed are: `:wq<enter>`. After the execution of this command, we go back to the terminal with `ListExamples.java` updated.
+Now, we can save the code file and exit the editor through command `:wq`. The keys pressed are: `:<w><q><enter>`. After the execution of this command, we go back to the terminal with `ListExamples.java` updated.
 
 ## Step 5: Run the tests, demonstrating that they now succeed
 To run the tests again, we repeat the necessary steps from **Step 3**. We have two ways to do so:
