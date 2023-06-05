@@ -9,7 +9,7 @@ After successful log-in, the output would be like this:
 ![ieng6loginpage](lab4_ieng6loginpage.png)
 
 ## Step 2: Clone your fork of the repository from your Github account
-In this step, we are going to clone the fork of the repository [lab7](https://github.com/ucsd-cse15l-s23/lab7) from our own Github account. Use the **SSH url** from our own fork of the repository for `git clone`. The keys pressed are: `git<space>clone<the forked repo's ssh url><enter>`. 
+In this step, we are going to clone the fork of the repository [lab7](https://github.com/ucsd-cse15l-s23/lab7) from our own Github account. Use the **SSH url** from our own fork of the repository for `git clone`. The keys pressed are: `git<space>clone<space><the forked repo's ssh url><enter>`. 
 
 After a successful cloning of fork, the output would be like this:
 ![gitclonepage](lab4_redo_step2.png)
