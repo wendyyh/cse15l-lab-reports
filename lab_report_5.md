@@ -35,7 +35,7 @@ In the first part of Lab Report 5, I am going to design a debugging scenario in 
 - **Title**: RE: Unexpected output & need help in debugging
 - **Post content**:
   
-  Thank you for your time and detailed explanation. I am now able to debug my program and compile the file with all tests passed!
+  Thank you for your time and detailed explanation. I am now able to debug my program and compile the file with all tests passed! The bug observed is the indexing error, causing by a setting of out-of-bound index while iterating through the *For Loop*.
   
   For my debugging process, I first changed the ranging method for the *For Loop* to `int i = 0; i < arr.length; i++` and swapped the position of `NewArray` and `arr` in *line 8*. Yet I got the same failure output as symptom from the terminal. Then I reviewed the indexing process with your advice and figured out that when iterating backward through the original array list `arr`, the index should be further minus 1 because of the zero-index rule. The revised *line 8* is `newArray[i] = arr[arr.length - i - 1]`, and the program can pass the testing now.
   ![javacorrect](lab5_javacorrect.png)
