@@ -13,21 +13,21 @@ In the first part of Lab Report 5, I am going to design a debugging scenario in 
   
   When I run my testing bash script `testing.sh` (in which I wrote only two commands: `javac` and `java` to compile files and run the java program) through command `$ bash testing.sh` in my terminal, I got output demonstrating 2/3 failures from the tester:
   ![bashfail](lab5_bashfail.png)
-  It seems like the symptom of my bug is the IndexOutOfBoundsException.
+  It seems like the symptom of my bug is the `IndexOutOfBoundsException`.
   
   **Detail the failure-inducing input and context. That might mean any or all of the command you're running, a test case, command-line arguments, working directory, even the last few commands you ran. Do your best to provide as much context as you can.**
   
   I am aiming to set up a java class that contains a method `reversed` to reverse an array list by creating a new array list. Below is a screenshot of my code: 
   ![javawrong](lab5_javawrong.png)
-  For my test case setup, I created a separate tester java file that contains several tests for the method `reversed`. The program passed the test case of inputing an empty array but failed to pass tests with non-empty array inputs. For the input array list `{1, 2, 3}`, my expected output would be `{3, 2, 1}`; for the input array list `{0, 2, 4, 6}`, my expected output would be `{6, 4, 2, 0}`. However, I am getting IndexOutOfBoundsException as what is mentioned above. Could you please help me locate the bug? Thank you so much!
+  For my test case setup, I created a separate tester java file that contains several tests for the method `reversed`. The program passed the test case of inputing an empty array but failed to pass tests with non-empty array inputs. For the input array list `{1, 2, 3}`, my expected output would be `{3, 2, 1}`; for the input array list `{0, 2, 4, 6}`, my expected output would be `{6, 4, 2, 0}`. However, I am getting `IndexOutOfBoundsException` as what is mentioned above. Could you please help me locate the bug? Thank you so much!
   
 ## Part 1.2: Debugging Scenario - TA's Responses
 - **Title**: RE: Unexpected output & need help in debugging
 - **Post content**:
 
-  Hi, thanks for the detailed information provided. As for what I can see, I think you need to adjust the range for your For Loop. The logistic of copying the original array by iterating backward is correct, yet you should start from index 0 instead of index 1. That is, the range of your iteration should be from 0 to `arr.length-1` instead of 1 to `arr.length`. 
+  Hi, thanks for the detailed information provided. As for what I can see, I think you need to adjust the range for your For Loop. The logistic of copying the original array by iterating backward through the input array is correct, yet you should start from index 0 instead of index 1. In Java, array lists always follow zero-based indexing. The index for the last element would be one less than the length of the array. An IndexOutOfBoundsException would be thrown to indicate that an index of an array is out of range (e.g. arr[3] for the array with a length of 3). That is, the range of your iteration should be from 0 to `arr.length-1` instead of 1 to `arr.length`. 
   
-  Also, there is another minor mistake I detect from the provided code file. In *line 8*, you should set elements in `newArray` to the corresponding one in the input `arr` instead of changing elements from the input `arr`. Make sure to fix this part as well. Keep in mind that with the range change in your For Loop, you might need to adjust the index used while updating `newArray` in *line 8*.
+  Also, there is another minor mistake I detect from the provided code file. In *line 8*, you should set elements in `newArray` to the corresponding one in the input `arr` instead of changing elements from the input `arr`. Make sure to fix this part as well. Keep in mind that with the range change in your For Loop, you might need to adjust the index used while updating `newArray` in *line 8* to avoid `IndexOutOfBoundsException`.
   
   Let me know if you have any further question. Good luck on debugging!
 
