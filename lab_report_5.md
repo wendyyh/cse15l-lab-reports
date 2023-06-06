@@ -25,9 +25,9 @@ In the first part of Lab Report 5, I am going to design a debugging scenario in 
 - **Title**: RE: Unexpected output & need help in debugging
 - **Post content**:
 
-  Hi, thanks for the detailed information provided. As for what I can see, I think you need to adjust the range for your For Loop. The logistic of copying the original array by iterating backward through the input array is correct, yet you should start from index 0 instead of index 1. In Java, array lists always follow zero-based indexing. The index for the last element would be one less than the length of the array. An `IndexOutOfBoundsException` would be thrown to indicate that an index of an array is out of range (e.g. arr[3] for the array with a length of 3). That is, the range of your iteration should be from 0 to `arr.length-1` instead of 1 to `arr.length`. 
+  Hi, thanks for the detailed information provided. As for what I can see, I think you need to adjust the range for your *For Loop*. The logistic of copying the original array by iterating backward through the input array is correct, yet you should start from index 0 instead of index 1. In Java, array lists always follow zero-based indexing. The index for the last element would be one less than the length of the array. An `IndexOutOfBoundsException` would be thrown to indicate that an index of an array is out of range (e.g. arr[3] for the array with a length of 3). That is, the range of your iteration should be from 0 to `arr.length-1` instead of 1 to `arr.length`. 
   
-  Also, there is another minor mistake I detect from the provided code file. In *line 8*, you should set elements in `newArray` to the corresponding one in the input `arr` instead of changing elements from the input `arr`. Make sure to fix this part as well. Keep in mind that with the range change in your For Loop, you might need to adjust the index used while updating `newArray` in *line 8* to avoid `IndexOutOfBoundsException`.
+  Also, there is another minor mistake I detect from the provided code file. In *line 8*, you should set elements in `newArray` to the corresponding one in the input `arr` instead of changing elements from the input `arr`. Make sure to fix this part as well. Keep in mind that with the range change in your *For Loop*, you might need to adjust the index used while updating `newArray` in *line 8* to avoid `IndexOutOfBoundsException`.
   
   Let me know if you have any further question. Good luck on debugging!
 
@@ -37,7 +37,7 @@ In the first part of Lab Report 5, I am going to design a debugging scenario in 
   
   Thank you for your time and detailed explanation. I am now able to debug my program and compile the file with all tests passed!
   
-  For my debugging process, I first changed the ranging method for the For Loop to `int i = 0; i < arr.length; i++` and swapped the position of `NewArray` and `arr` in *line 8*. Yet I got the same failure output as symptom from the terminal. Then I reviewed the indexing process with your advice and figured out that when iterating backward through the original array list `arr`, the index should be further minus 1 because of the zero-index rule. The revised *line 8* is `newArray[i] = arr[arr.length - i - 1]`, and the program can pass the testing now.
+  For my debugging process, I first changed the ranging method for the *For Loop* to `int i = 0; i < arr.length; i++` and swapped the position of `NewArray` and `arr` in *line 8*. Yet I got the same failure output as symptom from the terminal. Then I reviewed the indexing process with your advice and figured out that when iterating backward through the original array list `arr`, the index should be further minus 1 because of the zero-index rule. The revised *line 8* is `newArray[i] = arr[arr.length - i - 1]`, and the program can pass the testing now.
   ![javacorrect](lab5_javacorrect.png)
 
 ## Part 1.4: Debugging Scenario - Setup Information
