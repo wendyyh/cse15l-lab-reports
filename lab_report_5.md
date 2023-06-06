@@ -19,7 +19,7 @@ In the first part of Lab Report 5, I am going to design a debugging scenario in 
   
   I am aiming to set up a java class that contains a method `reversed` to reverse an array list by creating a new array list. Below is a screenshot of my code: 
   ![javawrong](lab5_javawrong.png)
-  For my test case setup, I create a separate tester java file that contains several tests for the method `reversed`. For the input array list `{1, 2, 3}`, my expected output would be `{3, 2, 1}`; for the input array list `{0, 2, 4, 6}`, my expected output would be `{6, 4, 2, 0}`. However, I am getting IndexOutOfBoundsException as what is mentioned above. Could you please help me locate the bug?
+  For my test case setup, I create a separate tester java file that contains several tests for the method `reversed`. For the input array list `{1, 2, 3}`, my expected output would be `{3, 2, 1}`; for the input array list `{0, 2, 4, 6}`, my expected output would be `{6, 4, 2, 0}`. However, I am getting IndexOutOfBoundsException as what is mentioned above. Could you please help me locate the bug? Thank you so much!
   
 ## Part 1.2: Debugging Scenario - TA's Responses
 - **Title**: RE: Unexpected output & need help in debugging
@@ -35,7 +35,7 @@ In the first part of Lab Report 5, I am going to design a debugging scenario in 
 - **Title**: RE: Unexpected output & need help in debugging
 - **Post content**:
   
-  Thank you for your detailed explanation. I am now able to debug my program and compile the file with all tests passed!
+  Thank you for your time and detailed explanation. I am now able to debug my program and compile the file with all tests passed!
   
   For my debugging process, I first changed the ranging method for the For Loop to `int i = 0; i < arr.length; i++` and swapped the position of `NewArray` and `arr` in line 8. Yet I got the same failure output as symptom from the terminal. Then I reviewed the indexing process with your advice and figured out that when iterating backward through the original array list `arr`, the index should be further minus 1 because of the zero-index rule. The revised line 8 is `newArray[i] = arr[arr.length - i - 1]`, and the program can pass the testing now.
   ![javacorrect](lab5_javacorrect.png)
