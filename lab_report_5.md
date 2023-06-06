@@ -11,7 +11,7 @@ In the first part of Lab Report 5, I am going to design a debugging scenario in 
   
   **Detail the symptom you're seeing. Be specific; include both what you're seeing and what you expected to see instead. Screenshots are great, copy-pasted terminal output is also great. Avoid saying “it doesn't work”.**
   
-  When I run my testing bash script (in which I wrote only two commands: `javac` and `java` to compile files and run the java program). In my terminal, I got output demonstrating 2/3 failures from the tester:
+  When I run my testing bash script `testing.sh` (in which I wrote only two commands: `javac` and `java` to compile files and run the java program) through command `$ bash testing.sh` in my terminal, I got output demonstrating 2/3 failures from the tester:
   ![bashfail](lab5_bashfail.png)
   It seems like the symptom of my bug is the IndexOutOfBoundsException.
   
@@ -19,7 +19,7 @@ In the first part of Lab Report 5, I am going to design a debugging scenario in 
   
   I am aiming to set up a java class that contains a method `reversed` to reverse an array list by creating a new array list. Below is a screenshot of my code: 
   ![javawrong](lab5_javawrong.png)
-  For my test case setup, I create a separate tester java file that contains several tests for the method `reversed`. For the input array list `{1, 2, 3}`, my expected output would be `{3, 2, 1}`; for the input array list `{0, 2, 4, 6}`, my expected output would be `{6, 4, 2, 0}`. However, I am getting IndexOutOfBoundsException as what is mentioned above. Could you please help me locate the bug? Thank you so much!
+  For my test case setup, I created a separate tester java file that contains several tests for the method `reversed`. The program passed the test case of inputing an empty array but failed to pass tests with non-empty array inputs. For the input array list `{1, 2, 3}`, my expected output would be `{3, 2, 1}`; for the input array list `{0, 2, 4, 6}`, my expected output would be `{6, 4, 2, 0}`. However, I am getting IndexOutOfBoundsException as what is mentioned above. Could you please help me locate the bug? Thank you so much!
   
 ## Part 1.2: Debugging Scenario - TA's Responses
 - **Title**: RE: Unexpected output & need help in debugging
@@ -27,7 +27,7 @@ In the first part of Lab Report 5, I am going to design a debugging scenario in 
 
   Hi, thanks for the detailed information provided. As for what I can see, I think you need to adjust the range for your For Loop. The logistic of copying the original array by iterating backward is correct, yet you should start from index 0 instead of index 1. That is, the range of your iteration should be from 0 to `arr.length-1` instead of 1 to `arr.length`. 
   
-  Also, there is another minor mistake I detect from the provided code file. In line 8, you should set elements in `newArray` to the corresponding one in the input `arr` instead of changing elements from the input `arr`. Make sure to rectify this part as well. Keep in mind that with the range change in your For Loop, you might need to adjust the index used for updating `newArray`.
+  Also, there is another minor mistake I detect from the provided code file. In *line 8*, you should set elements in `newArray` to the corresponding one in the input `arr` instead of changing elements from the input `arr`. Make sure to fix this part as well. Keep in mind that with the range change in your For Loop, you might need to adjust the index used while updating `newArray` in *line 8*.
   
   Let me know if you have any further question. Good luck on debugging!
 
@@ -37,7 +37,7 @@ In the first part of Lab Report 5, I am going to design a debugging scenario in 
   
   Thank you for your time and detailed explanation. I am now able to debug my program and compile the file with all tests passed!
   
-  For my debugging process, I first changed the ranging method for the For Loop to `int i = 0; i < arr.length; i++` and swapped the position of `NewArray` and `arr` in line 8. Yet I got the same failure output as symptom from the terminal. Then I reviewed the indexing process with your advice and figured out that when iterating backward through the original array list `arr`, the index should be further minus 1 because of the zero-index rule. The revised line 8 is `newArray[i] = arr[arr.length - i - 1]`, and the program can pass the testing now.
+  For my debugging process, I first changed the ranging method for the For Loop to `int i = 0; i < arr.length; i++` and swapped the position of `NewArray` and `arr` in *line 8*. Yet I got the same failure output as symptom from the terminal. Then I reviewed the indexing process with your advice and figured out that when iterating backward through the original array list `arr`, the index should be further minus 1 because of the zero-index rule. The revised *line 8* is `newArray[i] = arr[arr.length - i - 1]`, and the program can pass the testing now.
   ![javacorrect](lab5_javacorrect.png)
 
 ## Part 1.4: Debugging Scenario - Setup Information
@@ -102,3 +102,4 @@ For the mock-up conversation between the student and TA on EdStem above, I creat
   java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore ListReverseTester
   ```
 ## Part 2: Reflection
+Through CSE 15L lab experiences in the second half of this quarter, I have developed a better sense on the process of locating the bug and debugging. I have learned that we could break down the program into smaller steps, test frequently, and set up meaningful error message printing to faciliate the error detecting and handling process. A cool thing I have learned and been impressed is the bash script. Creating a bash script for repetitive tasks allows us to running a complex sequence of commands by only one command `$ bash <bash script>` instead of manually executing every individual command, which greatly increases the efficiency in programming. In general, I think course materials from CSE 15L are very useful in faciliating the process of computer programing tasks.
